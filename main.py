@@ -2,6 +2,7 @@ import sys
 import time
 import random
 import string
+import subprocess
 
 logo = [
     "\033[35m ██████╗ ██████╗ ███████╗██████╗  █████╗      █████╗ ██╗\033[0m",
@@ -37,8 +38,31 @@ print(f"{green}{soft}Hello {pic}! What Is Your Search Today?{end}")
 while True:
 
     choice = input(f"{user}: ").lower().strip()
- 
-    if choice == '':
+
+    if choice == "larp":
+        
+        larp_logo=[
+    "\033[35m   ██╗       █████╗  ██████╗  ██████╗ \033[0m",
+    "\033[35m   ██║      ██╔══██╗ ██╔══██╗ ██╔══██╗\033[0m",
+    "\033[35m   ██║      ███████║ ██████╔╝ ██████╔╝\033[0m",
+    "\033[35m   ██║      ██╔══██║ ██╔══██╗ ██╔═══╝ \033[0m",
+    "\033[35m   ███████╗ ██║  ██║ ██║  ██║ ██║     \033[0m",
+    "\033[35m   ╚══════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝     \033[0m"
+                ]
+        for line in larp_logo:
+            print(line)
+
+        while True:
+            print(f"{red}{soft} LARP MODE HAS BEEN ACTIVATED {end}")
+            print(f"{green}{soft} Hacker{end}")
+
+            larp_choice=(input(f"{pic}: "))
+            if larp_choice == "Hacker" or larp_choice == "hacker":
+                subprocess.Popen("start cmd /k cls", shell=True)
+                
+
+
+    elif choice == '':
         print(f"{green}{soft} Input has to be something {end}")
  
     elif choice == 'who are you':
